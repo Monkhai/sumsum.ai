@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @apply bg-gradient-to-br from-stone-800 to-stone-950;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-500/50 dark:bg-white;
+  border-radius: 50px;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+button,
+input,
+label,
+select,
+textarea {
+  @apply dark:text-stone-50;
+}
+
+/* .table-header::before {
+  @apply bg-black;
+  content: "";
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+} */
