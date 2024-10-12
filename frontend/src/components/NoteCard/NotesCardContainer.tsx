@@ -1,6 +1,6 @@
-import { type NoteType } from "essence-cloud-functions/functions/types";
 import { type DocumentTypeWithId } from "~/firebase/firestore/fireQuery/types";
 import NotesCard from "./NotesCard";
+import { NoteType } from "~/firebase/firestore/noteTypes";
 
 interface Props {
   note: DocumentTypeWithId<NoteType & { content: string }>;
