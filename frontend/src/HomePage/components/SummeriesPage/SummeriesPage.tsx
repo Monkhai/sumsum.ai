@@ -1,39 +1,16 @@
-import { useMutation } from "@tanstack/react-query";
-import MDEditor from "@uiw/react-md-editor";
-import { useRef, useState } from "react";
-import { Button } from "~/components/ui/button";
-import { Checkbox } from "~/components/ui/checkbox";
-import {
-  Dialog,
-  DialogContent,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "~/components/ui/dialog";
-import { Input } from "~/components/ui/input";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "~/components/ui/table";
-import { createSummary } from "~/firebase/cloud-functions/createSummary";
-import { SummaryType } from "~/firebase/firestore/fireQuery/summaryCollection";
-import { DocumentTypeWithId } from "~/firebase/firestore/fireQuery/types";
-import { notesCollection } from "~/firebase/firestore/notesCollection";
-import CreateSummaryForm from "./components/CreateSummaryForm/CreateSummaryForm";
+import { Search } from "lucide-react";
+import { useState } from "react";
 import SummaryCard from "~/components/SummaryCard/SummaryCard";
+import { Input } from "~/components/ui/input";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "~/components/ui/tooltip";
-import { Search } from "lucide-react";
-import UploadNoteForm from "./components/UploadNoteForm";
+import { SummaryType } from "~/firebase/firestore/fireQuery/summaryCollection";
+import { DocumentTypeWithId } from "~/firebase/firestore/fireQuery/types";
+import CreateSummaryForm from "./components/CreateSummaryForm/CreateSummaryForm";
 
 interface Props {
   summaries: DocumentTypeWithId<

@@ -14,6 +14,7 @@ import {
 } from "firebase/firestore";
 import { type FirebaseStorage, getBlob, ref } from "firebase/storage";
 import { firestore, storage } from "~/firebase/firebase";
+import { queryClient } from "~/Providers";
 import { BaseOperations } from "./BaseOperations";
 import { QueryBuilder } from "./QueryBuilder";
 import {
@@ -21,8 +22,6 @@ import {
   type DocumentTypeWithId,
   type OperationsParameters,
 } from "./types";
-import uploadNote from "~/firebase/storage/uploadNote";
-import { queryClient } from "~/Providers";
 
 export type SummaryType = {
   documentIds: Array<string>;

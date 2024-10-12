@@ -1,7 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
-import { File, FilePen, LucidePersonStanding } from "lucide-react";
-import React, { useRef, useState } from "react";
-import { data } from "tailwindcss/defaultTheme";
+import { FilePen } from "lucide-react";
+import { useRef, useState } from "react";
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
 import {
@@ -42,7 +41,7 @@ export default function CreateSummaryForm() {
       return res.content;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["summaries"] });
+      void queryClient.invalidateQueries({ queryKey: ["summaries"] });
       setIsModalOpen(false);
     },
     onError: (error) => {
