@@ -5,7 +5,6 @@ export const env = createEnv({
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
   },
-
   client: {
     NEXT_PUBLIC_FIRESTORE_API_KEY: z.string(),
     NEXT_PUBLIC_FIRESTORE_AUTH_DOMAIN: z.string(),
@@ -15,7 +14,6 @@ export const env = createEnv({
     NEXT_PUBLIC_FIRESTORE_APP_ID: z.string(),
     NEXT_PUBLIC_FIRESTORE_MEASUREMENT_ID: z.string(),
   },
-
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_FIRESTORE_API_KEY: process.env.NEXT_PUBLIC_FIRESTORE_API_KEY,
@@ -31,7 +29,6 @@ export const env = createEnv({
     NEXT_PUBLIC_FIRESTORE_MEASUREMENT_ID:
       process.env.NEXT_PUBLIC_FIRESTORE_MEASUREMENT_ID,
   },
-
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
   emptyStringAsUndefined: true,
 });
