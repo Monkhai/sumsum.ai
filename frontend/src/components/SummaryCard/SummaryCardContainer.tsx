@@ -1,4 +1,3 @@
-import { type NoteType } from "essence-cloud-functions/functions/types";
 import { type DocumentTypeWithId } from "~/firebase/firestore/fireQuery/types";
 import SummaryCard from "./SummaryCard";
 import { SummaryType } from "~/firebase/firestore/fireQuery/summaryCollection";

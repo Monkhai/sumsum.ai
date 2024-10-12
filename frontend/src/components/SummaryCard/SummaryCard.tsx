@@ -1,14 +1,7 @@
 import MDEditor from "@uiw/react-md-editor";
 import { SummaryType } from "~/firebase/firestore/fireQuery/summaryCollection";
 import { type DocumentTypeWithId } from "~/firebase/firestore/fireQuery/types";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
-import Tag from "../ui/tag";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 interface Props {
   summary: DocumentTypeWithId<SummaryType & { content: string }>;
