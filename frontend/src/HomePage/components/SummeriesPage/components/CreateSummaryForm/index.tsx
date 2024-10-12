@@ -1,3 +1,3 @@
-import CreateSummaryFormContainer from "./CreateSummaryFormContainer";
+import CreateSummaryForm from "./CreateSummaryForm";
 
-export default CreateSummaryFormContainer;
+export default CreateSummaryForm;
