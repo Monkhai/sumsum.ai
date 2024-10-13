@@ -1,18 +1,30 @@
 import { motion } from "framer-motion";
 import { type Dispatch, type SetStateAction } from "react";
-// import darkLogo from "public/dark-logo.png";
-// import lightLogo from "public/light-logo.png";
 import { cn } from "~/lib/utils";
 import { type Tab } from "./NavbarContainer";
+import { LogOut } from "lucide-react";
+import { Button } from "../ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 
 interface Props {
   selectedTab: Tab;
   setSelectedTab: Dispatch<SetStateAction<Tab>>;
   tabs: Array<{ label: string; value: Tab }>;
   theme: "light" | "dark";
+  handleLogout: () => void;
 }
 
-export default function Navbar({ selectedTab, setSelectedTab, tabs }: Props) {
+export default function Navbar({
+  selectedTab,
+  setSelectedTab,
+  tabs,
+  handleLogout,
+}: Props) {
   return (
     <nav className="flex flex-row items-center justify-center bg-transparent p-4">
       <ul className="lex-row flex items-center justify-center gap-4 rounded-full p-2">
@@ -34,7 +46,7 @@ export default function Navbar({ selectedTab, setSelectedTab, tabs }: Props) {
               )}
               <span
                 className={cn(
-                  "z-[2] p-2 mix-blend-difference dark:mix-blend-normal",
+                  "z-[2] p-2 text-white mix-blend-difference dark:mix-blend-normal",
                 )}
               >
                 {tab.label}
@@ -43,6 +55,16 @@ export default function Navbar({ selectedTab, setSelectedTab, tabs }: Props) {
           );
         })}
       </ul>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger className="absolute bottom-4 left-4">
+            <Button size="icon" variant="outline" onClick={handleLogout}>
+              <LogOut size={20} />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>Logout</TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     </nav>
   );
 }

@@ -17,7 +17,7 @@ interface Props {
 export default function NotesCard({ note }: Props) {
   return (
     <Card className="flex h-80 w-80 flex-col overflow-auto">
-      <CardHeader className="flex flex-row items-center justify-between px-0">
+      <CardHeader className="flex flex-row items-center">
         <CardTitle>{note.document.title}</CardTitle>
         <CardDescription className="inline-flex flex-row flex-wrap gap-2 justify-self-center">
           {note.document.tags.map((tag, index) => (
@@ -25,12 +25,12 @@ export default function NotesCard({ note }: Props) {
           ))}
         </CardDescription>
       </CardHeader>
-      <CardContent className="flex h-full flex-col overflow-auto p-0">
+      <CardContent
+        data-color-mode="dark"
+        className="flex h-full flex-col overflow-auto p-0"
+      >
         <MDEditor.Markdown
-          // disallowedElements={["svg"]}
-          components={{
-            a: () => null,
-          }}
+          components={{ a: () => null }}
           source={note.document.content}
           style={{
             fontSize: 10,

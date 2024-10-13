@@ -38,16 +38,5 @@ input,
 label,
 select,
 textarea {
-  @apply dark:text-stone-50;
+  @apply text-stone-50;
 }
-
-/* .table-header::before {
-  @apply bg-black;
-  content: "";
-  position: absolute;
-  height: 6px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-} */

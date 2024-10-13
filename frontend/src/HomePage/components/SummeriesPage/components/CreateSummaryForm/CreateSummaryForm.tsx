@@ -64,7 +64,11 @@ export default function CreateSummaryForm() {
     >
       <Dialog onOpenChange={(open) => setIsModalOpen(open)} open={isModalOpen}>
         <DialogTrigger>
-          <Button onClick={() => setIsModalOpen(true)} variant="outline">
+          <Button
+            size="icon"
+            onClick={() => setIsModalOpen(true)}
+            variant="outline"
+          >
             <FilePen size={20} />
           </Button>
         </DialogTrigger>

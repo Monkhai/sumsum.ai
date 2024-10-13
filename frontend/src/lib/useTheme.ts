@@ -6,9 +6,9 @@ export default function useTheme() {
   useEffect(() => {
     const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
     const listener = (e: MediaQueryListEvent) => {
-      const newTheme = e.matches ? "dark" : "light";
-      setTheme(newTheme);
-      document.documentElement.classList.toggle("dark", newTheme === "dark");
+      // const newTheme = e.matches ? "dark" : "light";
+      setTheme("dark");
+      document.documentElement.classList.toggle("dark", true);
     };
 
     // Add event listener for changes

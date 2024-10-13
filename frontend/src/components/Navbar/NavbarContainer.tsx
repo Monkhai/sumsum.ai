@@ -3,6 +3,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect } from "react";
 import useTheme from "~/lib/useTheme";
 import Navbar from "./Navbar";
+import { auth } from "~/firebase/firebase";
 
 export type Tab = "notes" | "summeries";
 
@@ -31,8 +32,15 @@ export default function NavbarContainer() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedTab]);
 
+  function handleLogout() {
+    void auth.signOut().then(() => {
+      router.push("/login");
+    });
+  }
+
   return (
     <Navbar
+      handleLogout={handleLogout}
       selectedTab={selectedTab}
       setSelectedTab={setSelectedTab}
       tabs={tabs}

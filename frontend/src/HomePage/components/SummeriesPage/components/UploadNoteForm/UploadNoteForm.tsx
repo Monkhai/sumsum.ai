@@ -1,9 +1,8 @@
+import { Upload } from "lucide-react";
 import React, { Dispatch, SetStateAction, useEffect } from "react";
+import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import UploadFileDialog from "./components/UploadFileDialog";
-import { Upload } from "lucide-react";
-import { Button } from "~/components/ui/button";
-import { cn } from "~/lib/utils";
 
 interface Props {
   formRef: React.RefObject<HTMLFormElement>;
@@ -67,13 +66,12 @@ export default function UploadNoteForm({
         placeholder=""
         accept=".md"
       />
-      <Button onClick={() => inputRef.current?.click()} variant="outline">
-        <Upload
-          size={20}
-          className={cn({
-            "text-blue-500": !!text,
-          })}
-        />
+      <Button
+        size="icon"
+        onClick={() => inputRef.current?.click()}
+        variant="outline"
+      >
+        <Upload size={20} />
       </Button>
       <UploadFileDialog
         isOpen={isOpen}

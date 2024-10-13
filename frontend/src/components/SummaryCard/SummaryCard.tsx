@@ -10,12 +10,14 @@ interface Props {
 export default function SummaryCard({ summary }: Props) {
   return (
     <Card className="flex h-80 w-80 flex-col overflow-auto">
-      <CardHeader className="flex flex-row items-center justify-between px-0">
+      <CardHeader className="flex flex-row items-center">
         <CardTitle>{summary.document.title}</CardTitle>
       </CardHeader>
-      <CardContent className="flex h-full flex-col overflow-auto p-0">
+      <CardContent
+        data-color-mode="dark"
+        className="flex h-full flex-col overflow-auto p-0"
+      >
         <MDEditor.Markdown
-          // disallowedElements={["svg"]}
           components={{
             a: () => null,
           }}
